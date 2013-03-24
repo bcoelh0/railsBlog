@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # show.html.haml
       format.json { render json: @post }
     end
   end
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
     @post = Post.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # new.html.haml
       format.json { render json: @post }
     end
   end
@@ -76,7 +76,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url }
+      format.html { redirect_to posts_url, notice: 'Post '+@post.title+' was removed.' }
       format.json { head :no_content }
     end
   end
