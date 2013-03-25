@@ -1,4 +1,4 @@
-%h1 Listing posts
+%h1 Listing posts OK
 
 %br
 
@@ -9,12 +9,12 @@
 	%h2= post.title
 	%p= post.message
 	
-	= link_to 'Show', post_path(post)
-	= link_to 'Edit', edit_post_path(post)
-	= link_to 'Delete', post, :method=> :delete, :confirm => 'Are you sure?' 
+	= link_to 'Show', [@blog, post]
+	= link_to 'Edit', edit_blog_post_path(@blog,post)
+	= link_to 'Delete', [@blog, post], :method=> :delete, :confirm => 'Are you sure?' 
 
 %br 
 %br 
 %br
 
-= link_to 'New Post', new_post_path 
+= link_to 'New Post', new_blog_post_path

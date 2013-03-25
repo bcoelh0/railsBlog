@@ -1,0 +1,12 @@
+%h1 Listing blogs
+
+
+- @blogs.each do |blog|
+	%h3= link_to blog.name, blog_posts_path(blog)
+	%h6= blog.description
+	%p= link_to 'Edit', edit_blog_path(blog)
+	%p= link_to 'Destroy', blog, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Blog', new_blog_path

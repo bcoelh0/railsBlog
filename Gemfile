@@ -24,6 +24,8 @@ gem 'jquery-rails'
 
 gem "haml-rails"
 
+gem "coffee-script"
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

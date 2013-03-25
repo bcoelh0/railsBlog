@@ -1,7 +1,8 @@
 BlogApp::Application.routes.draw do
-  get "test/index"
-
-  resources :posts
+  
+  resources :blogs do
+    resources :posts
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

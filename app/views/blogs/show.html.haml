@@ -1,0 +1,21 @@
+%p#notice= notice
+
+
+%h2 Name:
+= @blog.name
+
+%h4 Description:
+= @blog.description
+
+
+- @posts.each do |post|
+	%h6= post.title
+	%p= post.message
+	%br
+	%p= link_to 'Show', blog_path(@blog, post)
+	%p= link_to 'Edit', edit_blog_post_path(post,@blog)
+	
+
+= link_to 'New Post', new_blog_post_path
+\|
+= link_to 'Back', blogs_path
